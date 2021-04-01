@@ -4,14 +4,12 @@ $(function () {
     if (luck[e.code] === undefined){
       $('#' + e.code).addClass('active')
       luck[e.code] = 1
-      console.log(1)
     }
   })
   document.body.addEventListener('keyup',function (e) {
     luck[e.code] = undefined
-    setTimeout(function () {
-      $('#' + e.code).removeClass('active')
-    },700)
+    $('#' + e.code).removeClass('active')
+    playAudios('A0')
   })
   $('#showWord').click(function () {
     var attr = $(this).attr('ishow')
@@ -50,5 +48,12 @@ $(function () {
       $(this).html('显示Do')
     }
   })
+  var audios = {}
+  Object.keys(MIDI.Sound).forEach(function(key){
+    audios[key] = new Audio(MIDI.Sound[key])
+  })
+  function playAudios(key) {
+    audios[key].play()
+  }
 })
 
