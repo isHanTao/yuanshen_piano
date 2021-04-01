@@ -43,7 +43,7 @@ body{
   height: 80px;
   width: 80px;
   background-color: rgb(254,250,240);
-  opacity: .7;
+  opacity: .9;
   border-radius: 50%;
   font-size: 16px;
   font-weight: bolder;
@@ -58,11 +58,6 @@ body{
   display: none;
 }
 .active {
-  -webkit-transition: 0s;
-  -moz-transition: 0s;
-  -ms-transition: 0s;
-  transition: 0s;
-  transform: scale(1.15);
 }
 .lines{
   position: absolute;
@@ -116,4 +111,43 @@ svg,svg path{
 }
 .show_active{
   display: block !important;
+}
+.options{
+  position: absolute;
+  top: 10%;
+  width: 80%;
+  padding: 20px;
+  display: flex;
+}
+.bottom{
+  background-color: rgb(119,150,70);
+  border-radius: 2px;
+  padding: 2px 4px;
+  color: white;
+  cursor: pointer;
+  margin: 5px;
+}
+.active:after {
+  position: absolute;
+  background: rgb(134,206,106);
+  width: 80px;
+  height: 80px;
+  content: "";
+  display: block;
+  border-radius: 50%;
+  -webkit-backface-visibility: hidden;
+  opacity: 0;
+  animation: wave-animate 2s ease-out;
+}
+@keyframes wave-animate {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+    transform-origin: center;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    transform-origin: center;
+  }
 }
