@@ -86,6 +86,7 @@ $(function () {
       setTimeout(function () {
         console.log(1)
         new Audio(MIDI.Sound[key]).play()
+        $('#')
       }, time)
     } else {
       new Audio(MIDI.Sound[key]).play()
@@ -100,9 +101,30 @@ $(function () {
       {key: 'KeyJ', time: 4},
       {key: 'KeyQ', time: 4},
       {key: 'KeyJ', time: 6},
+
       {key: 'KeyQ', time: 4},
       {key: 'KeyE', time: 4},
-      {key: 'KeyJ', time: 4}],
+      {key: 'KeyJ', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'KeyD', time: 4},
+      {key: 'KeyH', time: 4},
+      {key: 'KeyG', time: 6},
+      {key: 'KeyH', time: 4},
+      {key: 'KeyQ', time: 4},
+      {key: 'KeyG', time: 4},
+
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+
+      {key: 'KeyF', time: 4},
+      {key: 'KeyD', time: 4},
+      {key: 'KeyF', time: 4},
+      {key: 'KeyD', time: 6},
+      {key: 'KeyF', time: 4},
+      {key: 'KeyQ', time: 4},
+      {key: 'KeyD', time: 4}
+    ],
     [
       {key: 'no', time: 4},
       {key: 'no', time: 4},
@@ -110,9 +132,28 @@ $(function () {
       {key: 'no', time: 4},
       {key: 'KeyN', time: 4},
       {key: 'KeyA', time: 4},
-      {key: 'KeyQ', time: 4},
       {key: 'KeyD', time: 4},
       {key: 'KeyA', time: 4},
+      {key: 'KeyC', time: 4},
+      {key: 'KeyV', time: 4},
+      {key: 'KeyM', time: 4},
+
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
     ]
 
   ]
