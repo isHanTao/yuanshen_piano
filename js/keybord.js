@@ -123,8 +123,35 @@ $(function () {
       {key: 'KeyD', time: 6},
       {key: 'KeyF', time: 4},
       {key: 'KeyQ', time: 4},
-      {key: 'KeyD', time: 4}
-    ],
+      {key: 'KeyD', time: 4},
+
+      {key: 'no', time: 4},
+    {key: 'KeyQ', time: 6},
+    {key: 'KeyQ', time: 4},
+    {key: 'KeyQ', time: 2},
+    {key: 'KeyJ', time: 4},
+    {key: 'KeyF', time: 6},
+    {key: 'KeyF', time: 4},
+    {key: 'KeyJ', time: 4},
+    //
+    // {key: 'KeyH', time: 4},
+    // {key: 'KeyJ', time: 4},
+    // {key: 'KeyQ', time: 4},
+    // {key: 'KeyJ', time: 6},
+    //
+    // {key: 'KeyQ', time: 4},
+    // {key: 'KeyE', time: 4},
+    // {key: 'KeyJ', time: 4},
+    // {key: 'no', time: 4},
+    // {key: 'no', time: 4},
+    // {key: 'KeyD', time: 4},
+    // {key: 'KeyH', time: 4},
+    // {key: 'KeyG', time: 6},
+    // {key: 'KeyH', time: 4},
+    // {key: 'KeyQ', time: 4},
+    // {key: 'KeyG', time: 4},
+
+  ],
     [
       {key: 'no', time: 4},
       {key: 'no', time: 4},
@@ -154,8 +181,23 @@ $(function () {
       {key: 'no', time: 4},
       {key: 'no', time: 4},
       {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
+      {key: 'no', time: 4},
     ]
-
   ]
   for (let i = 1; i < art_sky[0].length; i++) {
     art_sky[0][i].time += art_sky[0][i - 1].time
@@ -163,14 +205,25 @@ $(function () {
   }
   console.log(art_sky)
 
+  var timer =null
+  var play_node = 0
   function playMusic() {
-    for (let i = 0; i < art_sky[0].length; i++) {
-      console.log(time * art_sky[0][i].time)
-      if (art_sky[0].key !== 'no') {
-        playAudios(art_C[art_sky[0][i].key], time * art_sky[0][i].time)
-        playAudios(art_C[art_sky[1][i].key], time * art_sky[1][i].time)
+    timer = setInterval(function () {
+      var data = getPlay(play_node)
+      if (data[0] === 'end'){
+        clearInterval(timer)
+        console.log('end')
+      }else {
+        play_node++
+        console.log(data)
       }
+    },time)
+  }
+  function getPlay(index) {
+    if (index >= art_sky[0].length){
+      return ['end']
     }
+    return [art_sky[0][index].key,art_sky[1][index].key]
   }
 })
 
