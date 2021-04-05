@@ -7,160 +7,189 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.0.2/echarts.min.js"></script>
 </head>
 <body>
-<div class="options">
-    <div class="bottom" ishow="true" id="showWord">显示字母</div>
-    <div class="bottom" ishow="false" id="showMusic">不显示音阶</div>
-    <div class="bottom" ishow="true" id="showDo">显示Do</div>
-    <div class="bottom" id="play">播放</div>
-</div>
-<div class="content">
-    <div class="line">
-        <div class="line-head"><svg t="1617183906608" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10134" width="100" height="100"><path d="M686.6798525 553.41421438a155.69336344 155.69336344 0 0 0-57.61534031-61.57364625 196.37595094 196.37595094 0 0 0-97.41830531-19.3517175l-11.65501126-77.40687001s18.25218844-17.59247062 34.74512907-36.72428156c12.09482344-12.97444688 24.4095525-28.36785844 26.388705-30.34701187a229.80164531 229.80164531 0 0 0 63.33289406-167.34837469C626.6455475 48.95012562 574.52785344 31.357655 562.87284219 32.01737281c-37.82381156 2.41896469-68.1708225 72.349035-70.58978813 78.28649344-29.4673875 69.93007031-9.45595312 219.90588-9.45595218 219.90588a675.1110525 675.1110525 0 0 0-67.51110563 59.15468156 536.5703475 536.5703475 0 0 0-58.27505813 71.90922282c-79.82583469 133.92268125-11.87491781 237.05853937-3.0786825 249.81308062 75.64762312 109.95294 205.39209188 84.66376406 205.83190407 87.96235219a197.91529219 197.91529219 0 0 1-4.61802375 103.35576375A153.93411656 153.93411656 0 0 1 534.72488938 933.63148156a99.83727 99.83727 0 0 1-127.76531626 24.4095525c-24.4095525-20.45124656-21.99058781-26.38870594-21.99058875-31.00672875s7.69670625-4.17821156 16.05312938-8.1365175a171.52658625 171.52658625 0 0 0 14.95360031-10.11567093c37.16409375-27.26832938 12.31472906-93.45999937-25.28917594-94.33962188-61.35374063-1.53934125-68.39072906 46.62004687-64.43242312 65.97176344a127.10559844 127.10559844 0 0 0 146.45731594 109.95294c89.94150469-21.99058781 94.11971719-72.78884625 98.29792875-79.60592813 21.99058781-35.40484687 7.25689406-115.89039938 7.25689406-115.89039937s23.09011781-10.99529437 33.20578781-16.49294063a162.9502575 162.9502575 0 0 0 87.96235219-104.67519937 191.75792719 191.75792719 0 0 0-12.75454125-120.28851656zM548.79886531 138.89163031c6.59717625-6.59717625 34.52522344-33.86550563 51.01816407-32.54607 9.45595312 0 35.84465813 20.45124656 15.3934125 89.50169344a163.17016312 163.17016312 0 0 1-54.53665875 71.68931625c-27.92804719 24.18964688-46.40014031 39.80296406-46.8399525 40.46268188s-4.17821156 3.29858813-4.17821157 0c1.09952906 0.43981219-4.39811719-125.12644594 39.14324625-169.10762157z m-85.76329312 626.73175875a207.37124531 207.37124531 0 0 1-73.00875188-64.65232875 177.68395125 177.68395125 0 0 1-16.05312937-96.31877531 250.4727975 250.4727975 0 0 1 32.32616437-87.96235219 479.83463062 479.83463062 0 0 1 91.26094032-103.13585812c1.53934125-1.31943562 9.67585875 64.2125175 9.67585875 64.2125175a161.63082187 161.63082187 0 0 0-84.44385844 70.58978718 170.64696281 170.64696281 0 0 0-21.99058781 91.48084594 106.65435187 106.65435187 0 0 0 30.5669175 64.65232875 150.41562187 150.41562187 0 0 0 68.39072906 29.68729406 143.59854 143.59854 0 0 1-58.93477594-48.819105 114.79086937 114.79086937 0 0 1-6.81708281-71.02959937 96.7585875 96.7585875 0 0 1 29.68729406-47.9394825 184.72093969 184.72093969 0 0 1 54.53665781-27.04842281l36.50437688 235.07938593a189.99868031 189.99868031 0 0 1-91.7007525-8.79623531z m111.93209343 3.29858813l-34.96503562-233.75995032c103.57566938 15.61331719 103.79557594 90.82112813 104.23538719 100.7168925 4.83792937 105.55482281-69.2703525 133.04305781-69.27035156 133.04305782z" p-id="10135"></path></svg></div>
-        <div class="line-box">
-            <div class="lines">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div id="KeyQ" class="line-content">
-                <div class="do">Do</div>
-                <div class="music height show_active">1</div>
-                <div class="word">Q</div>
-            </div>
-            <div id="KeyW" class="line-content">
-                <div class="do">Re</div>
-                <div class="music height show_active">2</div>
-                <div class="word">W</div>
-            </div>
-            <div id="KeyE" class="line-content">
-                <div class="do">Me</div>
-                <div class="music height show_active">3</div>
-                <div class="word">E</div>
-            </div>
-            <div id="KeyR" class="line-content">
-                <div class="do">Fa</div>
-                <div class="music height show_active">4</div>
-                <div class="word">Q</div>
-            </div>
-            <div id="KeyT" class="line-content">
-                <div class="do">So</div>
-                <div class="music height show_active">5</div>
-                <div class="word">T</div>
-            </div>
-            <div id="KeyY" class="line-content">
-                <div class="do">La</div>
-                <div class="music height show_active">6</div>
-                <div class="word">y</div>
-            </div>
-            <div id="KeyU" class="line-content">
-                <div class="do">Xi</div>
-                <div class="music height show_active">7</div>
-                <div class="word">U</div>
-            </div>
-        </div>
-    </div>
-    <div class="line">
-        <div class="line-head"><svg t="1617184203551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10823" width="100" height="100"><path d="M761.1 809.06c0 40.24-32.62 72.87-72.87 72.87H574.52c-40.24 0-72.87-32.63-72.87-72.87s32.62-72.87 72.87-72.87h113.71c40.25 0 72.87 32.62 72.87 72.87z" fill="#2c2c2c" p-id="10824"></path><path d="M959.16 298.08c0 11.19-15.83 11.19-27.72 11.19h-69.97c-25.02 0-55.98 31.22-55.98 55.98v419.62c0 81.07-56.67 153.66-136.6 153.66h-82.65c-79.85 0-144.65-65.77-144.65-146.84 0-81.16 64.8-146.84 144.65-146.84h82.65c29.56 0 57.02 9.01 79.94 24.48V397.34c0-0.79 0.44-1.4 0.7-2.1-0.36-3.76-0.61-7.61-0.61-11.46 0-82.21 44.08-130.57 129.35-130.57 1.22 0 2.36 0.35 3.5 0.35 0.61-0.09 1.22-0.35 1.84-0.35l47.75 0.26c11.89 0 27.99 2.71 27.99 13.99l-0.19 30.62z m-297.1 402.56H584.5c-48.02 0-86.94 40.84-86.94 91.13 0 50.38 38.92 91.22 86.94 91.22h77.57c48.02 0 86.85-40.84 86.85-91.22-0.01-50.29-38.84-91.13-86.86-91.13m-38.38-363.38H78.2c-7.78 0-13.99-4.11-13.99-9.27v-37.35c0-5.16 6.21-9.36 13.99-9.36h545.47c7.7 0 13.99 4.2 13.99 9.36v37.35c0 5.16-6.21 9.27-13.98 9.27m0-195.73H78.2c-7.78 0-13.99-4.11-13.99-9.36V94.83c0-5.16 6.21-9.36 13.99-9.36h545.47c7.7 0 13.99 4.2 13.99 9.36v37.35c0 5.16-6.21 9.35-13.98 9.35m-14 391.63H78.2c-7.78 0-13.99-4.2-13.99-9.36v-37.34c0-5.17 6.21-9.36 13.99-9.36h531.48c7.69 0 13.99 4.2 13.99 9.36v37.34c0.01 5.17-6.3 9.36-13.99 9.36" fill="#2c2c2c" p-id="10825"></path></svg></div>
-        <div class="line-box">
-            <div class="lines">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div id="KeyA" class="line-content">
-                <div class="do">Do</div>
-                <div class="music show_active">1</div>
-                <div class="word">A</div>
-            </div>
-            <div id="KeyS" class="line-content">
-                <div class="do">Re</div>
-                <div class="music show_active">2</div>
-                <div class="word">S</div>
-            </div>
-            <div id="KeyD" class="line-content">
-                <div class="do">Me</div>
-                <div class="music show_active">3</div>
-                <div class="word">D</div>
-            </div>
-            <div id="KeyF" class="line-content">
-                <div class="do">Fa</div>
-                <div class="music show_active">4</div>
-                <div class="word">F</div>
-            </div>
-            <div id="KeyG" class="line-content">
-                <div class="do">So</div>
-                <div class="music  show_active">5</div>
-                <div class="word">G</div>
-            </div>
-            <div id="KeyH" class="line-content">
-                <div class="do">La</div>
-                <div class="music  show_active">6</div>
-                <div class="word">H</div>
-            </div>
-            <div id="KeyJ" class="line-content">
-                <div class="do">Xi</div>
-                <div class="music show_active">7</div>
-                <div class="word">J</div>
-            </div>
-        </div>
-    </div>
-    <div class="line">
-        <div class="line-head"><svg t="1617183960921" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10275" width="100" height="100"><path d="M408.535797 1.970747C238.263279-17.736721 93.21632 114.30331 93.21632 228.60662a140.120092 140.120092 0 0 0 137.952271 147.806005c65.231717 0 118.244804-44.144727 118.244804-98.537336s-53.013087-98.537336-118.244804-98.537337a139.528868 139.528868 0 0 0-54.392609 11.036182C172.046189 159.630485 191.753657 139.923018 231.168591 120.21555c235.307159-119.821401 315.319477 157.659738 315.319477 157.659739 78.829869 413.856813-418.38953 718.731332-463.125481 739.030023l3.350269 7.094688C181.308699 987.344111 388.828329 934.331024 585.903002 672.024634a591.224018 591.224018 0 0 0 98.537337-394.149345c-19.707467-137.952271-111.34719-256.197075-275.904542-275.904542z" p-id="10276"></path><path d="M861.807544 179.337952m-78.829869 0a78.829869 78.829869 0 1 0 157.659738 0 78.829869 78.829869 0 1 0-157.659738 0Z" p-id="10277"></path><path d="M861.807544 455.242494m-78.829869 0a78.829869 78.829869 0 1 0 157.659738 0 78.829869 78.829869 0 1 0-157.659738 0Z" p-id="10278"></path></svg></div>
-        <div class="line-box">
-            <div class="lines">
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <div id="KeyZ" class="line-content">
-                <div class="do">Do</div>
-                <div class="low music show_active">1</div>
-                <div class="word">Z</div>
-            </div>
-            <div id="KeyX" class="line-content">
-                <div class="do">Re</div>
-                <div class="low music show_active">2</div>
-                <div class="word">X</div>
-            </div>
-            <div id="KeyC" class="line-content">
-                <div class="do">Me</div>
-                <div class="low music show_active">3</div>
-                <div class="word">C</div>
-            </div>
-            <div id="KeyV" class="line-content">
-                <div class="do">Fa</div>
-                <div class="low music show_active">4</div>
-                <div class="word">V</div>
-            </div>
-            <div id="KeyB" class="line-content">
-                <div class="do">So</div>
-                <div class="low music show_active">5</div>
-                <div class="word">B</div>
-            </div>
-            <div id="KeyN" class="line-content">
-                <div class="do">La</div>
-                <div class="low music show_active">6</div>
-                <div class="word">N</div>
-            </div>
-            <div id="KeyM" class="line-content">
-                <div class="do">Xi</div>
-                <div class="low music show_active">7</div>
-                <div class="word">M</div>
-            </div>
-        </div>
 
+<div class="content">
+    <div class="options">
+        <div class="bottom" ishow="true" id="showWord">显示字母</div>
+        <div class="bottom" ishow="false" id="showMusic">不显示音阶</div>
+        <div class="bottom" ishow="true" id="showDo">显示Do</div>
+        <div class="bottom" id="play">播放</div>
+        <div class="bottom" id="replay">重新开始</div>
+        <div class="bottom" id="onlyMain">只显示主旋律</div>
+        <div class="bottom" id="playMain">只播放主旋律</div>
     </div>
+    <div class="map">
+<!--        <div class="map-item">-->
+<!--            <div class="map-main">-->
+<!--                <div>Do</div>-->
+<!--                <div>Ru</div>-->
+<!--                <div>Mi</div>-->
+<!--                <div>Fa</div>-->
+<!--            </div>-->
+<!--            <div class="map-other">-->
+<!--                <div>Do</div>-->
+<!--                <div>Ru</div>-->
+<!--                <div>Mi</div>-->
+<!--                <div>Fa</div>-->
+<!--            </div>-->
+<!--        </div>-->
+    </div>
+    <div style="display: flex;width: 100%">
+        <div class="left">
+            <div class="line">
+                <div class="line-head"><svg t="1617183906608" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10134" width="100" height="100"><path d="M686.6798525 553.41421438a155.69336344 155.69336344 0 0 0-57.61534031-61.57364625 196.37595094 196.37595094 0 0 0-97.41830531-19.3517175l-11.65501126-77.40687001s18.25218844-17.59247062 34.74512907-36.72428156c12.09482344-12.97444688 24.4095525-28.36785844 26.388705-30.34701187a229.80164531 229.80164531 0 0 0 63.33289406-167.34837469C626.6455475 48.95012562 574.52785344 31.357655 562.87284219 32.01737281c-37.82381156 2.41896469-68.1708225 72.349035-70.58978813 78.28649344-29.4673875 69.93007031-9.45595312 219.90588-9.45595218 219.90588a675.1110525 675.1110525 0 0 0-67.51110563 59.15468156 536.5703475 536.5703475 0 0 0-58.27505813 71.90922282c-79.82583469 133.92268125-11.87491781 237.05853937-3.0786825 249.81308062 75.64762312 109.95294 205.39209188 84.66376406 205.83190407 87.96235219a197.91529219 197.91529219 0 0 1-4.61802375 103.35576375A153.93411656 153.93411656 0 0 1 534.72488938 933.63148156a99.83727 99.83727 0 0 1-127.76531626 24.4095525c-24.4095525-20.45124656-21.99058781-26.38870594-21.99058875-31.00672875s7.69670625-4.17821156 16.05312938-8.1365175a171.52658625 171.52658625 0 0 0 14.95360031-10.11567093c37.16409375-27.26832938 12.31472906-93.45999937-25.28917594-94.33962188-61.35374063-1.53934125-68.39072906 46.62004687-64.43242312 65.97176344a127.10559844 127.10559844 0 0 0 146.45731594 109.95294c89.94150469-21.99058781 94.11971719-72.78884625 98.29792875-79.60592813 21.99058781-35.40484687 7.25689406-115.89039938 7.25689406-115.89039937s23.09011781-10.99529437 33.20578781-16.49294063a162.9502575 162.9502575 0 0 0 87.96235219-104.67519937 191.75792719 191.75792719 0 0 0-12.75454125-120.28851656zM548.79886531 138.89163031c6.59717625-6.59717625 34.52522344-33.86550563 51.01816407-32.54607 9.45595312 0 35.84465813 20.45124656 15.3934125 89.50169344a163.17016312 163.17016312 0 0 1-54.53665875 71.68931625c-27.92804719 24.18964688-46.40014031 39.80296406-46.8399525 40.46268188s-4.17821156 3.29858813-4.17821157 0c1.09952906 0.43981219-4.39811719-125.12644594 39.14324625-169.10762157z m-85.76329312 626.73175875a207.37124531 207.37124531 0 0 1-73.00875188-64.65232875 177.68395125 177.68395125 0 0 1-16.05312937-96.31877531 250.4727975 250.4727975 0 0 1 32.32616437-87.96235219 479.83463062 479.83463062 0 0 1 91.26094032-103.13585812c1.53934125-1.31943562 9.67585875 64.2125175 9.67585875 64.2125175a161.63082187 161.63082187 0 0 0-84.44385844 70.58978718 170.64696281 170.64696281 0 0 0-21.99058781 91.48084594 106.65435187 106.65435187 0 0 0 30.5669175 64.65232875 150.41562187 150.41562187 0 0 0 68.39072906 29.68729406 143.59854 143.59854 0 0 1-58.93477594-48.819105 114.79086937 114.79086937 0 0 1-6.81708281-71.02959937 96.7585875 96.7585875 0 0 1 29.68729406-47.9394825 184.72093969 184.72093969 0 0 1 54.53665781-27.04842281l36.50437688 235.07938593a189.99868031 189.99868031 0 0 1-91.7007525-8.79623531z m111.93209343 3.29858813l-34.96503562-233.75995032c103.57566938 15.61331719 103.79557594 90.82112813 104.23538719 100.7168925 4.83792937 105.55482281-69.2703525 133.04305781-69.27035156 133.04305782z" p-id="10135"></path></svg></div>
+                <div class="line-box">
+                    <div class="lines">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div id="KeyQ" class="line-content">
+                        <div class="do">Do</div>
+                        <div class="music height show_active">1</div>
+                        <div class="word">Q</div>
+                    </div>
+                    <div id="KeyW" class="line-content">
+                        <div class="do">Re</div>
+                        <div class="music height show_active">2</div>
+                        <div class="word">W</div>
+                    </div>
+                    <div id="KeyE" class="line-content">
+                        <div class="do">Me</div>
+                        <div class="music height show_active">3</div>
+                        <div class="word">E</div>
+                    </div>
+                    <div id="KeyR" class="line-content">
+                        <div class="do">Fa</div>
+                        <div class="music height show_active">4</div>
+                        <div class="word">R</div>
+                    </div>
+                    <div id="KeyT" class="line-content">
+                        <div class="do">So</div>
+                        <div class="music height show_active">5</div>
+                        <div class="word">T</div>
+                    </div>
+                    <div id="KeyY" class="line-content">
+                        <div class="do">La</div>
+                        <div class="music height show_active">6</div>
+                        <div class="word">y</div>
+                    </div>
+                    <div id="KeyU" class="line-content">
+                        <div class="do">Xi</div>
+                        <div class="music height show_active">7</div>
+                        <div class="word">U</div>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="line-head"><svg t="1617184203551" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10823" width="100" height="100"><path d="M761.1 809.06c0 40.24-32.62 72.87-72.87 72.87H574.52c-40.24 0-72.87-32.63-72.87-72.87s32.62-72.87 72.87-72.87h113.71c40.25 0 72.87 32.62 72.87 72.87z" fill="#2c2c2c" p-id="10824"></path><path d="M959.16 298.08c0 11.19-15.83 11.19-27.72 11.19h-69.97c-25.02 0-55.98 31.22-55.98 55.98v419.62c0 81.07-56.67 153.66-136.6 153.66h-82.65c-79.85 0-144.65-65.77-144.65-146.84 0-81.16 64.8-146.84 144.65-146.84h82.65c29.56 0 57.02 9.01 79.94 24.48V397.34c0-0.79 0.44-1.4 0.7-2.1-0.36-3.76-0.61-7.61-0.61-11.46 0-82.21 44.08-130.57 129.35-130.57 1.22 0 2.36 0.35 3.5 0.35 0.61-0.09 1.22-0.35 1.84-0.35l47.75 0.26c11.89 0 27.99 2.71 27.99 13.99l-0.19 30.62z m-297.1 402.56H584.5c-48.02 0-86.94 40.84-86.94 91.13 0 50.38 38.92 91.22 86.94 91.22h77.57c48.02 0 86.85-40.84 86.85-91.22-0.01-50.29-38.84-91.13-86.86-91.13m-38.38-363.38H78.2c-7.78 0-13.99-4.11-13.99-9.27v-37.35c0-5.16 6.21-9.36 13.99-9.36h545.47c7.7 0 13.99 4.2 13.99 9.36v37.35c0 5.16-6.21 9.27-13.98 9.27m0-195.73H78.2c-7.78 0-13.99-4.11-13.99-9.36V94.83c0-5.16 6.21-9.36 13.99-9.36h545.47c7.7 0 13.99 4.2 13.99 9.36v37.35c0 5.16-6.21 9.35-13.98 9.35m-14 391.63H78.2c-7.78 0-13.99-4.2-13.99-9.36v-37.34c0-5.17 6.21-9.36 13.99-9.36h531.48c7.69 0 13.99 4.2 13.99 9.36v37.34c0.01 5.17-6.3 9.36-13.99 9.36" fill="#2c2c2c" p-id="10825"></path></svg></div>
+                <div class="line-box">
+                    <div class="lines">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div id="KeyA" class="line-content">
+                        <div class="do">Do</div>
+                        <div class="music show_active">1</div>
+                        <div class="word">A</div>
+                    </div>
+                    <div id="KeyS" class="line-content">
+                        <div class="do">Re</div>
+                        <div class="music show_active">2</div>
+                        <div class="word">S</div>
+                    </div>
+                    <div id="KeyD" class="line-content">
+                        <div class="do">Me</div>
+                        <div class="music show_active">3</div>
+                        <div class="word">D</div>
+                    </div>
+                    <div id="KeyF" class="line-content">
+                        <div class="do">Fa</div>
+                        <div class="music show_active">4</div>
+                        <div class="word">F</div>
+                    </div>
+                    <div id="KeyG" class="line-content">
+                        <div class="do">So</div>
+                        <div class="music  show_active">5</div>
+                        <div class="word">G</div>
+                    </div>
+                    <div id="KeyH" class="line-content">
+                        <div class="do">La</div>
+                        <div class="music  show_active">6</div>
+                        <div class="word">H</div>
+                    </div>
+                    <div id="KeyJ" class="line-content">
+                        <div class="do">Xi</div>
+                        <div class="music show_active">7</div>
+                        <div class="word">J</div>
+                    </div>
+                </div>
+            </div>
+            <div class="line">
+                <div class="line-head"><svg t="1617183960921" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="10275" width="100" height="100"><path d="M408.535797 1.970747C238.263279-17.736721 93.21632 114.30331 93.21632 228.60662a140.120092 140.120092 0 0 0 137.952271 147.806005c65.231717 0 118.244804-44.144727 118.244804-98.537336s-53.013087-98.537336-118.244804-98.537337a139.528868 139.528868 0 0 0-54.392609 11.036182C172.046189 159.630485 191.753657 139.923018 231.168591 120.21555c235.307159-119.821401 315.319477 157.659738 315.319477 157.659739 78.829869 413.856813-418.38953 718.731332-463.125481 739.030023l3.350269 7.094688C181.308699 987.344111 388.828329 934.331024 585.903002 672.024634a591.224018 591.224018 0 0 0 98.537337-394.149345c-19.707467-137.952271-111.34719-256.197075-275.904542-275.904542z" p-id="10276"></path><path d="M861.807544 179.337952m-78.829869 0a78.829869 78.829869 0 1 0 157.659738 0 78.829869 78.829869 0 1 0-157.659738 0Z" p-id="10277"></path><path d="M861.807544 455.242494m-78.829869 0a78.829869 78.829869 0 1 0 157.659738 0 78.829869 78.829869 0 1 0-157.659738 0Z" p-id="10278"></path></svg></div>
+                <div class="line-box">
+                    <div class="lines">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <div id="KeyZ" class="line-content">
+                        <div class="do">Do</div>
+                        <div class="low music show_active">1</div>
+                        <div class="word">Z</div>
+                    </div>
+                    <div id="KeyX" class="line-content">
+                        <div class="do">Re</div>
+                        <div class="low music show_active">2</div>
+                        <div class="word">X</div>
+                    </div>
+                    <div id="KeyC" class="line-content">
+                        <div class="do">Me</div>
+                        <div class="low music show_active">3</div>
+                        <div class="word">C</div>
+                    </div>
+                    <div id="KeyV" class="line-content">
+                        <div class="do">Fa</div>
+                        <div class="low music show_active">4</div>
+                        <div class="word">V</div>
+                    </div>
+                    <div id="KeyB" class="line-content">
+                        <div class="do">So</div>
+                        <div class="low music show_active">5</div>
+                        <div class="word">B</div>
+                    </div>
+                    <div id="KeyN" class="line-content">
+                        <div class="do">La</div>
+                        <div class="low music show_active">6</div>
+                        <div class="word">N</div>
+                    </div>
+                    <div id="KeyM" class="line-content">
+                        <div class="do">Xi</div>
+                        <div class="low music show_active">7</div>
+                        <div class="word">M</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="right"></div>
+    </div>
+
 </div>
 
 <script src="./js/piano-ogg.js"></script>
 <script src="https://www.jq22.com/jquery/jquery-1.10.2.js"></script>
-<script src="./js/keybord.js"></script>
+<script src="./js/art.js"></script>
+<script src="./js/wTom.js"></script>
+<script src="./js/Music.js"></script>
+<script src="js/main.js"></script>
 
 </body>
 </html>
