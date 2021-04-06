@@ -1,4 +1,12 @@
 wTom = {
+    SQ:'<div class="music height-map">1</div>',
+    SW:'<div class="music height-map">2</div>',
+    SE:'<div class="music height-map">3</div>',
+    SR:'<div class="music height-map">4</div>',
+    ST:'<div class="music height-map">5</div>',
+    SY:'<div class="music height-map">6</div>',
+    SU:'<div class="music height-map">7</div>',
+
     Q:'<div class="music height-map">1</div>',
     W:'<div class="music height-map">2</div>',
     E:'<div class="music height-map">3</div>',
@@ -22,6 +30,14 @@ wTom = {
     B:'<div class="music low-map">5</div>',
     N:'<div class="music low-map">6</div>',
     M:'<div class="music low-map">7</div>',
+
+    AZ:'<div class="music low-map">1</div>',
+    AX:'<div class="music low-map">2</div>',
+    AC:'<div class="music low-map">3</div>',
+    AV:'<div class="music low-map">4</div>',
+    AB:'<div class="music low-map">5</div>',
+    AN:'<div class="music low-map">6</div>',
+    AM:'<div class="music low-map">7</div>',
 
     0:'<div>0</div>'
 }

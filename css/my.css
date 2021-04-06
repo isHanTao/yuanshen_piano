@@ -1,9 +1,7 @@
 html,body{
-  height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 body{
   display: flex;
@@ -94,7 +92,18 @@ body{
   border-radius: 50%;
   background-color: rgb(158,159,126);
 }
-.low,.low-map,.height-map{
+.height-height:before{
+  content: "";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  top: -5px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: rgb(31, 30, 30);
+}
+.low,.low-map,.height-map,.height-height,.low-low{
   position: relative;
 }
 .low:before{
@@ -107,6 +116,17 @@ body{
   transform: translateX(-50%);
   border-radius: 50%;
   background-color: rgb(158,159,126);
+}
+.low-low:before{
+  content: "";
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: rgb(31, 30, 30);
 }
 .low-map:before{
   content: "";

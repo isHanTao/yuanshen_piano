@@ -22,7 +22,7 @@ class Music {
     init() {
         this.registerEvent()
         this.noteToTime()
-        this.renderMap(this.select)
+        this.renderMap()
     }
 
     // 注册监听事件
@@ -30,16 +30,27 @@ class Music {
         let that = this
         document.body.addEventListener('keydown', (e) => {
             if (this.luck[e.code] === undefined) {
-                $('#' + e.code).addClass('active')
                 this.luck[e.code] = 1
                 if (this.keys.indexOf(e.key.toUpperCase()) !== -1) {
-                    this.playAudios(e.key.toUpperCase())
+                    e.preventDefault()
+                    if (e.altKey){
+                        $('#A' + e.key.toUpperCase()).addClass('active')
+                        this.playAudios('A' + e.key.toUpperCase())
+                    }else if (e.shiftKey){
+                        $('#S' + e.key.toUpperCase()).addClass('active')
+                        this.playAudios('S' + e.key.toUpperCase())
+                    }else {
+                        $('#' + e.key.toUpperCase()).addClass('active')
+                        this.playAudios(e.key.toUpperCase())
+                    }
                 }
             }
         })
         document.body.addEventListener('keyup', (e) => {
             this.luck[e.code] = undefined
-            $('#' + e.code).removeClass('active')
+            $('#' + e.key.toUpperCase()).removeClass('active')
+            $('#A' + e.key.toUpperCase()).removeClass('active')
+            $('#S' + e.key.toUpperCase()).removeClass('active')
         })
         $('#showWord').click(function () {
             var attr = $(this).attr('ishow')
@@ -133,7 +144,8 @@ class Music {
 
     // 播放单音节
     playAudios(key) {
-        new Audio('./mp3/' + key + '.mp3').play()
+        // new Audio('./mp3/' + key + '.mp3').play()
+        new Audio(MIDI.get(key)).play()
     }
 
     // 渲染音谱
@@ -149,12 +161,12 @@ class Music {
         let long = this.base * this.long
         while (true){
             while (indexM < this.map[0].length && countM < long) {
-                main += `<div id="note${this.timeMap[0][indexM].time}">${wTom[this.map[0][indexM].key]} <p>${this.map[0][indexM].time}</p></div>`
+                main += `<div id="note${this.timeMap[0][indexM].time}">${wTom[this.map[0][indexM].key.toUpperCase()]} <p>${this.map[0][indexM].time}</p></div>`
                 countM += this.map[0][indexM].time
                 indexM++
             }
             while (indexO < this.map[1].length && countO < long) {
-                other += `<div>${wTom[this.map[1][indexO].key]} <p>${this.map[1][indexO].time}</p></div>`
+                other += `<div>${wTom[this.map[1][indexO].key.toUpperCase()]} <p>${this.map[1][indexO].time}</p></div>`
                 countO += this.map[1][indexO].time
                 indexO++
             }
@@ -162,8 +174,6 @@ class Music {
                         <div class="map-main">${main}</div>
                         <div class="map-other">${other}</div>
                     </div>`
-            console.log(indexM,this.map[0].length)
-            console.log(indexO,this.map[1].length)
             $(this.select).append(html)
             html = ''
             main = ''
@@ -239,7 +249,7 @@ class Music {
         const data2 = this.timeMap[1].find((val) => {
             return this.play_node === val.time
         })
-        return [data1 ? data1.key : '0', data2 ? data2.key : '0']
+        return [data1 ? data1.key.toUpperCase() : '0', data2 ? data2.key.toUpperCase() : '0']
     }
 
     autoPlay() {
@@ -255,16 +265,16 @@ class Music {
             this.play_node++
             if (data[0] !== '0') {
                 this.playAudios(data[0])
-                $('#Key' + data[0]).addClass('active')
+                $('#' + data[0]).addClass('active')
                 setTimeout(function () {
-                    $('#Key' + data[0]).removeClass('active')
+                    $('#' + data[0]).removeClass('active')
                 }, this.time / 2)
             }
             if (!this.playMain && data[1] !== '0' ) {
                 this.playAudios(data[1])
-                $('#Key' + data[1]).addClass('active')
+                $('#' + data[1]).addClass('active')
                 setTimeout(function () {
-                    $('#Key' + data[1]).removeClass('active')
+                    $('#' + data[1]).removeClass('active')
                 }, this.time / 2)
             }
         }
